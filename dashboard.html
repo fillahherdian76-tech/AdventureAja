@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/AdventureAja.png" />
+    <title>AdventureAja | Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAVBAR -->
+      <header class="navbar">
+        <div class="logo">
+          <img src="assets/AdventureAja.png" alt="AdventureAja" class="logo-img" />
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-btn">&#9776;</label>
+        <nav>
+          <a href="dashboard.html" class="active">Home</a>
+          <a href="katalog/katalog.html">Katalog</a>
+          <a href="pesanan/pesanan.html">Pesanan</a>
+          <a href="#">Profil</a>
+          <a href="#" class="profile-icon" aria-label="Akun">&#128100;</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- HERO -->
+        <section class="hero">
+          <h1>Selamat Datang!</h1>
+          <h3>Bersiaplah untuk petualangan berikutnya!</h3>
+          <p>
+            Temukan peralatan camping dan mendaki terbaik untuk menemani
+            petualanganmu bersama AdventureAja.
+          </p>
+          <a href="#katalog" class="btn-primary">Cari Perlengkapan &rsaquo;</a>
+        </section>
+
+        <!-- RINGKASAN STATUS -->
+        <section class="stats">
+          <div class="stat-card">
+            <div class="stat-icon icon-cart">&#128722;</div>
+            <div class="stat-info">
+              <h4>Pesanan</h4>
+              <span class="stat-number">2</span>
+              <small>Pesanan Diterima</small>
+            </div>
+            <span class="stat-arrow">&rsaquo;</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon icon-box">&#128230;</div>
+            <div class="stat-info">
+              <h4>Diproses</h4>
+              <span class="stat-number">0</span>
+              <small>Menunggu Diproses</small>
+            </div>
+            <span class="stat-arrow">&rsaquo;</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon icon-check">&#10004;</div>
+            <div class="stat-info">
+              <h4>Selesai</h4>
+              <span class="stat-number">4</span>
+              <small>Pesanan Selesai</small>
+            </div>
+            <span class="stat-arrow">&rsaquo;</span>
+          </div>
+        </section>
+
+        <!-- PESANAN TERBARU -->
+        <section class="section">
+          <div class="section-head">
+            <h2>Pesanan Terbaru</h2>
+            <a href="pesanan/pesanan.html" class="see-all">Lihat Semua &rarr;</a>
+          </div>
+
+          <div class="order-list">
+            <div class="order-card">
+              <img src="assets/tenda.png" alt="Tenda 3 Layer" />
+              <div class="order-info">
+                <span class="badge badge-success">Sedang Disewa</span>
+                <h3>Tenda 3 Layer</h3>
+                <p>&#128197; 26 September 2026 - 30 September 2026</p>
+                <p>&#128205; Jl. Kemantren 1 Malang</p>
+                <p class="order-price">Rp. 150.000</p>
+              </div>
+            </div>
+
+            <div class="order-card">
+              <img src="assets/carrier.png" alt="Carrier 60L &amp; 40L" />
+              <div class="order-info">
+                <span class="badge badge-process">Diproses</span>
+                <h3>Carrier 60L &amp; 40L</h3>
+                <p>&#128197; 26 September 2026 - 30 September 2026</p>
+                <p>&#128205; Jl. Kemantren 1 Malang</p>
+                <p class="order-price">Rp. 200.000</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- KATALOG -->
+        <section class="section" id="katalog">
+          <div class="section-head">
+            <h2>Katalog</h2>
+            <a href="katalog/katalog.html" class="see-all">Lihat Semua &rarr;</a>
+          </div>
+
+          <div class="catalog-grid">
+            <div class="product-card">
+              <img src="assets/tenda.png" alt="Tenda 3 Layer" />
+              <h4>Tenda 3 Layer</h4>
+              <p class="rating">&#9733; 4.8 (50+)</p>
+              <span class="tag">Sewa</span>
+              <p class="product-price">Rp. 40.000 / Hari</p>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/carrier.png" alt="Carrier 60L" />
+              <h4>Carrier 60L</h4>
+              <p class="rating">&#9733; 4.6 (60+)</p>
+              <span class="tag">Sewa</span>
+              <p class="product-price">Rp. 50.000 / Hari</p>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/sleeping-bag.png" alt="Sleeping Bag" />
+              <h4>Sleeping Bag</h4>
+              <p class="rating">&#9733; 4.5 (80+)</p>
+              <span class="tag">Sewa</span>
+              <p class="product-price">Rp. 25.000 / Hari</p>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/lampu.png" alt="Lampu Tenda" />
+              <h4>Lampu Tenda</h4>
+              <p class="rating">&#9733; 4.7 (40+)</p>
+              <span class="tag">Sewa</span>
+              <p class="product-price">Rp. 7.000 / Hari</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; AdventureAja 2026</p>
+      </footer>
+    </div>
+  </body>
+</html>

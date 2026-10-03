@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/AdventureAja.png" />
+    <title>AdventureAja | Pesanan</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/crud.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAVBAR -->
+      <header class="navbar">
+        <div class="logo">
+          <img src="../assets/AdventureAja.png" alt="AdventureAja" class="logo-img" />
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-btn">&#9776;</label>
+        <nav>
+          <a href="../dashboard.html">Home</a>
+          <a href="../katalog/katalog.html">Katalog</a>
+          <a href="pesanan.html" class="active">Pesanan</a>
+          <a href="#">Profil</a>
+          <a href="#" class="profile-icon" aria-label="Akun">&#128100;</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-head">
+            <h2>Daftar Pesanan</h2>
+            <a href="pesanan-entry.html" class="btn-primary btn-small">+ Tambah Pesanan</a>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nama Barang</th>
+                  <th>Tanggal Sewa</th>
+                  <th>Lokasi</th>
+                  <th>Total Harga</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="../assets/tenda.png" alt="Tenda 3 Layer" class="table-img" /></td>
+                  <td>Tenda 3 Layer</td>
+                  <td>26 - 30 Sep 2026</td>
+                  <td>Jl. Kemantren 1 Malang</td>
+                  <td>Rp. 150.000</td>
+                  <td><span class="badge badge-success">Sedang Disewa</span></td>
+                  <td class="action-cell">
+                    <a href="pesanan-entry.html" class="btn-edit">Edit</a>
+                    <a href="#" class="btn-delete">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="../assets/carrier.png" alt="Carrier 60L" class="table-img" /></td>
+                  <td>Carrier 60L &amp; 40L</td>
+                  <td>26 - 30 Sep 2026</td>
+                  <td>Jl. Kemantren 1 Malang</td>
+                  <td>Rp. 200.000</td>
+                  <td><span class="badge badge-process">Diproses</span></td>
+                  <td class="action-cell">
+                    <a href="pesanan-entry.html" class="btn-edit">Edit</a>
+                    <a href="#" class="btn-delete">Hapus</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; AdventureAja 2026</p>
+      </footer>
+    </div>
+  </body>
+</html>
