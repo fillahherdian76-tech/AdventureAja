@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/AdventureAja.png" />
+    <title>AdventureAja | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="page" id="mainPage">
+      <!-- NAVBAR DENGAN SIMBOL HAMBURGER -->
+      <header class="navbar">
+        <div class="logo">
+          <h2 style="color: #fff; font-size: 20px; font-weight: 700;">AdventureAja</h2>
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-btn" title="Menu">&#9776;</label>
+        <nav>
+          <a href="index.html" class="active">Home</a>
+          <!-- Menu Katalog diproteksi dengan fungsi JS -->
+          <a href="#" onclick="checkCatalogAccess(event)">Katalog</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- HERO SECTION -->
+        <section class="hero" style="margin-top: 40px;">
+          <h1 id="heroTitle" style="font-size: 38px; font-weight: 700; margin-bottom: 16px; line-height: 1.2;">
+            Malang Mbois Ilakes<br />Bareng AdventureAja.
+          </h1>
+          <p style="font-size: 15px; line-height: 1.7; max-width: 680px; margin-bottom: 28px; color: #ddd;">
+            Mulai petualanganmu tanpa ribet bersama AdventureAja, rental alat camping & outdoor terpercaya di Malang, Jawa Timur. 
+            Tersedia tenda, sleeping bag, carrier, kompor, matras, dan perlengkapan mendaki berkualitas dengan harga mulai Rp 2.000.
+          </p>
+          
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="register.html" class="btn-primary btn-interactive" style="background: #ffc107; color: #111; padding: 12px 28px; border-radius: 12px; font-weight: 600;">Daftar</a>
+            <a href="login.html" class="btn-primary btn-interactive" style="background: #fff; color: #111; padding: 12px 28px; border-radius: 12px; font-weight: 600;">Masuk</a>
+          </div>
+        </section>
+
+        <!-- Container Dinamis (DOM 3) -->
+        <div id="dynamicContainer" style="margin-top: 25px;"></div>
+      </main>
+
+      <footer style="margin-top: 60px; text-align: center;">
+        <p>&copy; AdventureAja 2026</p>
+      </footer>
+    </div>
+
+    <!-- Panggil File JavaScript Eksternal -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

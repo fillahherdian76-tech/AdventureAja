@@ -1,4 +1,4 @@
-/* ===== RESET & BASE ===== */
+ /* ===== RESET & BASE ===== */
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +71,7 @@ img {
 
 .navbar nav a:hover,
 .navbar nav a.active {
-  color: #ffc107;
+  color: #ffF;
 }
 
 .profile-icon {
@@ -131,6 +131,21 @@ img {
 
 .btn-primary:hover {
   background: #eba416;
+}
+
+/* Efek interaktif tombol & link saat diklik (Active & Hover) */
+.btn-interactive, 
+.navbar nav a {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-interactive:active {
+  background-color: #d89e04 !important;
+  transform: scale(0.96);
+}
+
+.navbar nav a:active {
+  color: #ff9800 !important;
 }
 
 /* ===== STATS ===== */
@@ -409,3 +424,4 @@ footer {
     margin-bottom: 8px;
   }
 }
+
