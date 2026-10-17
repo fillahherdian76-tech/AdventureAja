@@ -1,0 +1,243 @@
+
+/* =====================================
+   ADVENTUREAJA - HOME
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    background:
+        linear-gradient(
+            rgba(5, 15, 25, 0.70),
+            rgba(5, 15, 25, 0.90)
+        ),
+        url("../assets/backgrounddashboard.jpg") center / cover fixed;
+}
+
+#mainPage {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+
+#mainPage .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    margin-top: 24px;
+    padding: 16px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: rgba(10, 20, 30, 0.75);
+    backdrop-filter: blur(12px);
+}
+
+#mainPage .logo h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#mainPage nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+#mainPage nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#mainPage nav a:hover,
+#mainPage nav a.active {
+    color: #ffc107;
+}
+
+#mainPage #menu-toggle {
+    display: none;
+}
+
+#mainPage .menu-btn {
+    display: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+/* HERO */
+
+#mainPage main {
+    flex: 1;
+}
+
+#mainPage .hero {
+    max-width: 760px;
+    margin-top: 100px;
+}
+
+#mainPage #heroTitle {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+#mainPage .hero p {
+    max-width: 680px;
+    margin: 0 0 28px;
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* CONTAINER TOMBOL */
+
+#mainPage .hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* TOMBOL DAFTAR DAN MASUK */
+
+#mainPage .hero-buttons .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 12px 28px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: #ffc107;
+    color: #111;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#mainPage .hero-buttons .btn-primary:hover {
+    background: #ffca2c;
+    transform: translateY(-2px);
+}
+
+/* Tombol Masuk */
+
+#mainPage .hero-buttons .btn-login {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+}
+
+#mainPage .hero-buttons .btn-login:hover {
+    background: #eaeaea;
+    border-color: #eaeaea;
+}
+
+/* INFORMASI DINAMIS DOM */
+
+#mainPage #dynamicContainer {
+    max-width: 680px;
+    margin-top: 15px;
+}
+
+#mainPage .hero-info {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+
+#mainPage footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    color: #ddd;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    #mainPage {
+        width: 92%;
+    }
+
+    #mainPage .navbar {
+        padding: 14px 18px;
+    }
+
+    #mainPage .menu-btn {
+        display: block;
+    }
+
+    #mainPage nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        z-index: 10;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        background: #17232d;
+    }
+
+    #mainPage nav a {
+        padding: 12px;
+    }
+
+    #mainPage #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+
+    #mainPage .hero {
+        margin-top: 65px;
+    }
+
+    #mainPage #heroTitle {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+    #mainPage #heroTitle {
+        font-size: 30px;
+    }
+
+    #mainPage .hero p {
+        font-size: 14px;
+    }
+
+    #mainPage .hero-buttons .btn-primary {
+        min-width: 110px;
+        padding: 11px 22px;
+    }
+}

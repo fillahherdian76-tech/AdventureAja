@@ -1,67 +1,78 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/AdventureAja.png" />
-    <title>AdventureAja | Tambah Produk</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/dashboard.css" />
-    <link rel="stylesheet" href="../css/crud.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdventureAja | Tambah Katalog</title>
+    <link rel="icon" href="../assets/AdventureAja.png">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
     <div class="page">
-      <!-- NAVBAR -->
-      <header class="navbar">
-        <div class="logo">
-          <img src="../assets/AdventureAja.png" alt="AdventureAja" class="logo-img" />
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="logo-details">
+                <span class="logo_name">Adventure<span class="logo-accent">Aja</span></span>
+                <i class="bx bx-menu toggle-btn" id="sidebarToggle"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../dashboard.html"><i class="bx bxs-home"></i> <span class="link-text">Home</span></a></li>
+                <li><a href="katalog.html" class="active"><i class="bx bxs-box"></i> <span class="link-text">Katalog</span></a></li>
+                <li><a href="../pesanan/pesanan.html"><i class="bx bxs-receipt"></i> <span class="link-text">Pesanan</span></a></li>
+                <li><a href="#profil"><i class="bx bxs-user"></i> <span class="link-text">Profil</span></a></li>
+            </ul>
         </div>
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-btn">&#9776;</label>
-        <nav>
-          <a href="../index.html">Home</a>
-          <a href="katalog.html" class="active">Katalog</a>
-          <a href="../login.html">Masuk</a>
-          <a href="../register.html">Daftar</a>
-        </nav>
-      </header>
 
-      <main>
-        <section class="section">
-          <div class="form-card">
-            <h2>Tambah Produk</h2>
+        <section class="home-section">
+            <main>
 
-            <form action="katalog.html" method="post" enctype="multipart/form-data">
-              <label for="nama">Nama Produk</label>
-              <input type="text" id="nama" name="nama" placeholder="Contoh: Tenda 3 Layer" />
+                <section class="content-section">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Tambah Perlengkapan</h2>
+                        </div>
+                        <a href="katalog.html" class="view-all">
+                            <i class="bx bx-arrow-back"></i> Kembali
+                        </a>
+                    </div>
 
-              <label for="harga">Harga / Hari</label>
-              <input type="number" id="harga" name="harga" placeholder="Contoh: 40000" />
+                    <div class="form-card">
+                        <form action="">
+                            <label for="nama">Nama Perlengkapan</label>
+                            <input class="input-field" type="text" id="nama" name="nama" placeholder="Contoh: Tenda 3 Layer"  />
 
-              <label for="rating">Rating</label>
-              <input type="number" id="rating" name="rating" step="0.1" min="0" max="5" placeholder="Contoh: 4.8" />
+                            <label for="deskripsi">Deskripsi</label>
+                            <input class="input-field" type="text" id="deskripsi" name="deskripsi" placeholder="Contoh: Perlengkapan tenda camping" />
 
-              <label for="deskripsi">Deskripsi</label>
-              <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="Tuliskan deskripsi produk"></textarea>
+                            <label for="harga">Harga per Hari (Rp)</label>
+                            <input class="input-field" type="number" id="harga" name="harga" placeholder="Contoh: 40000"  min="0" />
 
-              <label for="foto">Foto Produk</label>
-              <input type="file" id="foto" name="foto" accept="image/*" />
+                            <label for="foto">Foto Perlengkapan</label>
+                            <input class="input-field" type="file" id="foto" name="foto"     />
 
-              <div class="form-actions">
-                <a href="katalog.html" class="btn-cancel">Batal</a>
-                <button type="submit" class="btn-primary">Simpan</button>
-              </div>
-            </form>
-          </div>
+                            <button type="submit" class="btn-primary btn-full">
+                                <i class="bx bx-save"></i> Simpan Data
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer id="profil">
+                <a href="../dashboard.html" class="footer-logo">Adventure<span>Aja</span></a>
+                <p>Temani setiap langkah petualanganmu.</p>
+                <span class="copyright">© AdventureAja 2026</span>
+            </footer>
         </section>
-      </main>
 
-      <footer>
-        <p>&copy; AdventureAja 2026</p>
-      </footer>
     </div>
-  </body>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/katalog.js"></script>
+</body>
 </html>

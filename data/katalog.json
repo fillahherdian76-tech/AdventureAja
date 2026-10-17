@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": 1,
+    "nama": "Tenda 3 Layer",
+    "deskripsi": "Perlengkapan tenda camping",
+    "harga": 40000,
+    "foto": "../assets/tenda.png"
+  },
+  {
+    "id": 2,
+    "nama": "Carrier 60L",
+    "deskripsi": "Tas untuk perjalanan mendaki",
+    "harga": 50000,
+    "foto": "../assets/carrier.png"
+  },
+  {
+    "id": 3,
+    "nama": "Sleeping Bag",
+    "deskripsi": "Kantong tidur untuk camping",
+    "harga": 25000,
+    "foto": "../assets/sleeping-bag.png"
+  },
+  {
+    "id": 4,
+    "nama": "Lampu Tenda",
+    "deskripsi": "Penerangan saat malam hari",
+    "harga": 7000,
+    "foto": "../assets/lampu.png"
+  }
+]

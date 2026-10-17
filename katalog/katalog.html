@@ -1,104 +1,134 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/AdventureAja.png" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AdventureAja | Katalog</title>
+
+    <link rel="icon" href="../assets/AdventureAja.png">
+
+    <!-- Boxicons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/dashboard.css" />
-    <link rel="stylesheet" href="../css/crud.css" />
-  </head>
-  <body>
+        href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS Dashboard -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
     <div class="page">
-      <!-- NAVBAR -->
-      <header class="navbar">
-        <div class="logo">
-          <img src="../assets/AdventureAja.png" alt="AdventureAja" class="logo-img" />
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="logo-details">
+                <span class="logo_name">
+                    Adventure<span class="logo-accent">Aja</span>
+                </span>
+
+                <i class="bx bx-menu toggle-btn" id="sidebarToggle"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="../dashboard.html">
+                        <i class="bx bxs-home"></i>
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="katalog.html" class="active">
+                        <i class="bx bxs-box"></i>
+                        <span class="link-text">Katalog</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../pesanan/pesanan.html">
+                        <i class="bx bxs-receipt"></i>
+                        <span class="link-text">Pesanan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#profil">
+                        <i class="bx bxs-user"></i>
+                        <span class="link-text">Profil</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-btn">&#9776;</label>
-        <nav>
-          <a href="../dashboard.html">Home</a>
-          <a href="katalog.html" class="active">Katalog</a>
-          <a href="../pesanan/pesanan.html">Pesanan</a>
-          <a href="#">Profil</a>
-          <a href="#" class="profile-icon" aria-label="Akun">&#128100;</a>
-        </nav>
-      </header>
 
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h2>Katalog Perlengkapan</h2>
-            <a href="katalog-entry.html" class="btn-primary btn-small">+ Tambah Produk</a>
-          </div>
+        <!-- KONTEN UTAMA -->
+        <section class="home-section">
+            <main>
 
-          <div class="table-wrapper">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Foto</th>
-                  <th>Nama Produk</th>
-                  <th>Rating</th>
-                  <th>Harga / Hari</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><img src="../assets/tenda.png" alt="Tenda 3 Layer" class="table-img" /></td>
-                  <td>Tenda 3 Layer</td>
-                  <td>&#9733; 4.8 (50+)</td>
-                  <td>Rp. 40.000</td>
-                  <td class="action-cell">
-                    <a href="katalog-entry.html" class="btn-edit">Edit</a>
-                    <a href="#" class="btn-delete">Hapus</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><img src="../assets/carrier.png" alt="Carrier 60L" class="table-img" /></td>
-                  <td>Carrier 60L</td>
-                  <td>&#9733; 4.6 (60+)</td>
-                  <td>Rp. 50.000</td>
-                  <td class="action-cell">
-                    <a href="katalog-entry.html" class="btn-edit">Edit</a>
-                    <a href="#" class="btn-delete">Hapus</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><img src="../assets/sleeping-bag.png" alt="Sleeping Bag" class="table-img" /></td>
-                  <td>Sleeping Bag</td>
-                  <td>&#9733; 4.5 (80+)</td>
-                  <td>Rp. 25.000</td>
-                  <td class="action-cell">
-                    <a href="katalog-entry.html" class="btn-edit">Edit</a>
-                    <a href="#" class="btn-delete">Hapus</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><img src="../assets/lampu.png" alt="Lampu Tenda" class="table-img" /></td>
-                  <td>Lampu Tenda</td>
-                  <td>&#9733; 4.7 (40+)</td>
-                  <td>Rp. 7.000</td>
-                  <td class="action-cell">
-                    <a href="katalog-entry.html" class="btn-edit">Edit</a>
-                    <a href="#" class="btn-delete">Hapus</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                <section class="content-section">
+
+                    <!-- JUDUL DAN TOMBOL TAMBAH -->
+                    <div class="section-heading">
+                        <div>
+                            <h2>Katalog Perlengkapan</h2>
+                        </div>
+
+                        <a href="katalog-entry.html" class="btn-primary">
+                            <i class="bx bx-plus"></i>
+                            Tambah Data
+                        </a>
+                    </div>
+
+                    <!-- TABEL KATALOG -->
+                    <div class="table-wrapper">
+                        <table class="table-data">
+                            <thead>
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nama Perlengkapan</th>
+                                    <th>Deskripsi</th>
+                                    <th>Harga / Hari</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="katalogTable">
+                                <!-- Data katalog ditampilkan melalui JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+            </main>
+
+            <!-- FOOTER -->
+            <footer id="profil">
+                <a href="../dashboard.html" class="footer-logo">
+                    Adventure<span>Aja</span>
+                </a>
+
+                <p>Temani setiap langkah petualanganmu.</p>
+
+                <span class="copyright">© AdventureAja 2026</span>
+            </footer>
         </section>
-      </main>
 
-      <footer>
-        <p>&copy; AdventureAja 2026</p>
-      </footer>
+        <!-- TOAST / SNACKBAR -->
+        <div id="toast" class="toast">
+            <i class="bx bx-check-circle"></i>
+            <span id="toastMessage">Berhasil!</span>
+        </div>
+
     </div>
-  </body>
-</html>
 
+    <!-- JAVASCRIPT -->
+    <!-- Setiap file dipanggil satu kali -->
+    <script src="../js/script.js"></script>
+    <script src="../js/katalog.js"></script>
+    <script src="../js/toast.js"></script>
+
+</body>
+</html>
