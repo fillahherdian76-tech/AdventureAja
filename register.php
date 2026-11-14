@@ -1,119 +1,51 @@
 <?php
-session_start();
+require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/config/koneksi.php';
 
-// Kalau sudah login, arahkan ke dashboard.
 if (isset($_SESSION['user'])) {
-    header('Location: user-dashboard.php');
+    $destination = ($_SESSION['user']['role'] ?? '') === 'admin' ? 'admin.php' : 'user-dashboard.php';
+    header('Location: ' . $destination);
     exit;
 }
 
 $errors = [];
 $success = '';
-
 $fullName = '';
 $email = '';
 
-// Lokasi penyimpanan akun.
-$dataDirectory = __DIR__ . '/data';
-$userFile = $dataDirectory . '/users.json';
-
-// Buat folder data jika belum tersedia.
-if (!is_dir($dataDirectory)) {
-    mkdir($dataDirectory, 0755, true);
-}
-
-// Buat file akun kosong jika belum tersedia.
-if (!file_exists($userFile)) {
-    file_put_contents($userFile, '[]');
-}
-
-// Proses form ketika tombol Daftar ditekan.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fullName = trim($_POST['fullName'] ?? '');
     $email = strtolower(trim($_POST['email'] ?? ''));
     $password = $_POST['password'] ?? '';
     $confirmPassword = $_POST['confirmPassword'] ?? '';
 
-    if (mb_strlen($fullName) < 3) {
-        $errors[] = 'Nama lengkap minimal 3 karakter.';
-    }
+    if (mb_strlen($fullName) < 3 || mb_strlen($fullName) > 100) $errors[] = 'Nama lengkap harus 3 sampai 100 karakter.';
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 100) $errors[] = 'Format email tidak valid.';
+    if (strlen($password) < 8) $errors[] = 'Password minimal 8 karakter.';
+    if ($password !== $confirmPassword) $errors[] = 'Konfirmasi password tidak cocok.';
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Format email tidak valid.';
-    }
+    if (!$errors) {
+        $check = mysqli_prepare($conn, 'SELECT id FROM users WHERE email = ?');
+        mysqli_stmt_bind_param($check, 's', $email);
+        mysqli_stmt_execute($check);
+        $exists = mysqli_stmt_get_result($check)->num_rows > 0;
+        mysqli_stmt_close($check);
 
-    if (strlen($password) < 8) {
-        $errors[] = 'Password minimal 8 karakter.';
-    }
-
-    if ($password !== $confirmPassword) {
-        $errors[] = 'Konfirmasi password tidak cocok.';
-    }
-
-    if (empty($errors)) {
-        $fileHandle = fopen($userFile, 'c+');
-
-        if ($fileHandle === false) {
-            $errors[] = 'File akun tidak dapat dibuka.';
+        if ($exists) {
+            $errors[] = 'Email sudah terdaftar. Gunakan email lain.';
         } else {
-            // Mengunci file agar penulisan data lebih aman.
-            if (flock($fileHandle, LOCK_EX)) {
-                rewind($fileHandle);
-                $contents = stream_get_contents($fileHandle);
-                $users = json_decode($contents ?: '[]', true);
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = mysqli_prepare($conn, "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'user')");
+            mysqli_stmt_bind_param($stmt, 'sss', $fullName, $email, $passwordHash);
 
-                if (!is_array($users)) {
-                    $users = [];
-                }
-
-                $emailExists = false;
-
-                foreach ($users as $user) {
-                    if (
-                        isset($user['email']) &&
-                        strtolower($user['email']) === $email
-                    ) {
-                        $emailExists = true;
-                        break;
-                    }
-                }
-
-                if ($emailExists) {
-                    $errors[] = 'Email sudah terdaftar. Gunakan email lain.';
-                } else {
-                    $users[] = [
-                        'id' => uniqid('user_', true),
-                        'name' => $fullName,
-                        'email' => $email,
-                        'password' => password_hash(
-                            $password,
-                            PASSWORD_DEFAULT
-                        ),
-                        'role' => 'user'
-                    ];
-
-                    $json = json_encode(
-                        $users,
-                        JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
-                    );
-
-                    rewind($fileHandle);
-                    ftruncate($fileHandle, 0);
-
-                    if (fwrite($fileHandle, $json) === false) {
-                        $errors[] = 'Akun gagal disimpan.';
-                    } else {
-                        fflush($fileHandle);
-                        $success = 'Pendaftaran berhasil! Mengalihkan ke halaman login...';
-                    }
-                }
-
-                flock($fileHandle, LOCK_UN);
-            } else {
-                $errors[] = 'Data akun sedang digunakan. Coba lagi.';
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_close($stmt);
+                header('Location: login.php?daftar=berhasil');
+                exit;
             }
-
-            fclose($fileHandle);
+            error_log(mysqli_error($conn));
+            mysqli_stmt_close($stmt);
+            $errors[] = 'Pendaftaran gagal. Silakan coba kembali.';
         }
     }
 }
