@@ -70,5 +70,11 @@ $message = [
 </section>
 <footer class="dashboard-footer"><p>© 2026 AdventureAja. Temani setiap langkah petualanganmu.</p></footer>
 </main></div>
-<script src="js/script.js"></script>
+<script>
+document.getElementById("sidebarToggle")?.addEventListener("click", function () {
+ const sidebar = document.getElementById("sidebar");
+ sidebar?.classList.toggle("active");
+ this.setAttribute("aria-expanded", sidebar?.classList.contains("active") ? "true" : "false");
+});
+</script>
 </body></html>
