@@ -87,9 +87,13 @@ require_admin();
     </div>
 
     <div class="topbar-info">
-        <div class="status-indicator"></div>
-        <span>Admin Panel</span>
-    </div>
+    <div class="status-indicator"></div>
+    <span>Admin Panel</span>
+
+    <a href="logout.php" class="logout-button">
+        Logout
+    </a>
+</div>
 
 </header>
 

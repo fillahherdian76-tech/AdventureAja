@@ -1601,3 +1601,20 @@ a {
     background: rgba(255, 107, 107, 0.14);
     color: #ff9292;
 }
+/* Tombol Logout pada header admin */
+.logout-button {
+    display: inline-block;
+    margin-left: 18px;
+    padding: 9px 18px;
+    background-color: #dc3545;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #bb2d3b;
+}
