@@ -1,27 +1,11 @@
 <?php
-session_start();
-
-// Proteksi dashboard: wajib login.
-if (!isset($_SESSION['user']) || !is_array($_SESSION['user'])) {
-    header('Location: login.php');
+require_once __DIR__ . '/auth.php';
+require_login();
+if (($_SESSION['user']['role'] ?? '') !== 'user') {
+    header('Location: admin.php');
     exit;
 }
-
-$user = $_SESSION['user'];
-
-$userName = htmlspecialchars(
-    $user['name'] ?? 'Pengguna',
-    ENT_QUOTES,
-    'UTF-8'
-);
-
-$userEmail = htmlspecialchars(
-    $user['email'] ?? '',
-    ENT_QUOTES,
-    'UTF-8'
-);
 ?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
