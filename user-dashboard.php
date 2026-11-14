@@ -5,6 +5,9 @@ if (($_SESSION['user']['role'] ?? '') !== 'user') {
     header('Location: admin.php');
     exit;
 }
+$user = $_SESSION['user'];
+$userName = htmlspecialchars($user['name'] ?? 'Pengguna', ENT_QUOTES, 'UTF-8');
+$userEmail = htmlspecialchars($user['email'] ?? '', ENT_QUOTES, 'UTF-8');
 ?>
 <!DOCTYPE html>
 <html lang="id">
