@@ -39,4 +39,10 @@ $notice = [
 <p class="form-note"><span class="required-mark">*</span> Wajib diisi.</p>
 <div class="form-actions"><a href="categories.php" class="secondary-button">Batal</a><button type="submit" class="primary-button form-submit"><?= $isEdit ? 'Simpan Perubahan' : 'Simpan Kategori' ?></button></div>
 </form></section><footer class="dashboard-footer"><p>© 2026 AdventureAja. Temani setiap langkah petualanganmu.</p></footer></main></div>
-<script src="js/script.js"></script></body></html>
+<script>
+document.getElementById("sidebarToggle")?.addEventListener("click", function () {
+ const sidebar = document.getElementById("sidebar");
+ sidebar?.classList.toggle("active");
+ this.setAttribute("aria-expanded", sidebar?.classList.contains("active") ? "true" : "false");
+});
+</script></body></html>
