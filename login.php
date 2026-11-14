@@ -1,16 +1,15 @@
 <?php
-session_start();
+require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/config/koneksi.php';
 
 if (isset($_SESSION['user'])) {
-    header('Location: user-dashboard.php');
+    $destination = ($_SESSION['user']['role'] ?? '') === 'admin' ? 'admin.php' : 'user-dashboard.php';
+    header('Location: ' . $destination);
     exit;
 }
 
 $email = '';
 $error = '';
-
-$dataDirectory = __DIR__ . '/data';
-$userFile = $dataDirectory . '/users.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = strtolower(trim($_POST['email'] ?? ''));
@@ -20,53 +19,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Format email tidak valid.';
     } elseif ($password === '') {
         $error = 'Password wajib diisi.';
-    } elseif (!is_file($userFile) || !is_readable($userFile)) {
-        $error = 'Data akun belum tersedia. Silakan hubungi admin.';
     } else {
-        $contents = file_get_contents($userFile);
-        $users = json_decode($contents, true);
+        $stmt = mysqli_prepare($conn, 'SELECT id, name, email, password, role FROM users WHERE email = ? LIMIT 1');
+        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $account = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
 
-        if (!is_array($users)) {
-            $users = [];
-        }
-
-        $authenticatedUser = null;
-
-        foreach ($users as $user) {
-            if (
-                isset($user['email'], $user['password']) &&
-                strtolower($user['email']) === $email &&
-                password_verify($password, $user['password'])
-            ) {
-                $authenticatedUser = $user;
-                break;
+        $validPassword = false;
+        if ($account) {
+            // Kompatibilitas satu kali untuk akun lama yang masih tersimpan sebagai teks biasa di SQL dump.
+            $validPassword = password_verify($password, $account['password']);
+            if (!$validPassword && hash_equals((string) $account['password'], (string) $password)) {
+                $validPassword = true;
+                $newHash = password_hash($password, PASSWORD_DEFAULT);
+                $update = mysqli_prepare($conn, 'UPDATE users SET password = ? WHERE id = ?');
+                mysqli_stmt_bind_param($update, 'si', $newHash, $account['id']);
+                mysqli_stmt_execute($update);
+                mysqli_stmt_close($update);
             }
         }
 
-        if ($authenticatedUser !== null) {
+        if ($account && $validPassword) {
             session_regenerate_id(true);
-
-            // Simpan informasi yang diperlukan ke session.
             $_SESSION['user'] = [
-                'id' => $authenticatedUser['id'] ?? '',
-                'name' => $authenticatedUser['name'] ?? '',
-                'email' => $authenticatedUser['email'],
-                'role' => $authenticatedUser['role'] ?? 'user'
+                'id' => (int) $account['id'],
+                'name' => $account['name'],
+                'email' => $account['email'],
+                'role' => $account['role']
             ];
-
-            header('Location: user-dashboard.php');
+            $destination = $account['role'] === 'admin' ? 'admin.php' : 'user-dashboard.php';
+            header('Location: ' . $destination);
             exit;
-        } else {
-            $error = 'Email atau password salah.';
         }
+
+        $error = 'Email atau password salah.';
     }
 }
 
-$registered = isset($_GET['daftar']) &&
-              $_GET['daftar'] === 'berhasil';
-
-$loggedOut = isset($_GET['logout']) &&
-             $_GET['logout'] === 'berhasil';
+$registered = isset($_GET['daftar']) && $_GET['daftar'] === 'berhasil';
+$loggedOut = isset($_GET['logout']) && $_GET['logout'] === 'berhasil';
 ?>
 <!DOCTYPE html>
 <html lang="id">
