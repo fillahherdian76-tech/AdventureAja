@@ -1249,3 +1249,313 @@ body.user-sidebar-collapsed .user-sidebar .user-register-link {
         padding: 18px;
     }
 }
+
+
+/* =========================================
+   TEMA GELAP ADVENTUREAJA
+   Menyamakan katalog dengan dashboard user
+========================================= */
+
+:root {
+    --aa-yellow: #ffc107;
+    --aa-navy: #101c2c;
+    --aa-panel: #172638;
+    --aa-panel-light: #24384b;
+    --aa-text: #ffffff;
+    --aa-muted: #aab6c5;
+    --aa-border: rgba(255, 255, 255, 0.08);
+}
+
+/* BACKGROUND UTAMA */
+body {
+    background:
+        linear-gradient(rgba(7, 16, 29, 0.58), rgba(7, 16, 29, 0.72)),
+        url("../assets/backgrounddashboard.jpg") center / cover fixed !important;
+    color: var(--aa-text) !important;
+}
+
+/* SIDEBAR */
+.user-sidebar {
+    background: rgba(16, 28, 44, 0.98) !important;
+    border-right: 1px solid var(--aa-border) !important;
+    color: var(--aa-text) !important;
+}
+
+.user-logo {
+    color: var(--aa-text) !important;
+}
+
+.user-logo span {
+    color: var(--aa-yellow) !important;
+}
+
+.user-nav-link {
+    color: #c1cbd8 !important;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.user-nav-link:hover,
+.user-nav-link.active {
+    color: var(--aa-yellow) !important;
+    background: rgba(255, 193, 7, 0.12) !important;
+}
+
+.user-register-link {
+    background: var(--aa-yellow) !important;
+    color: var(--aa-navy) !important;
+}
+
+/* TOPBAR */
+.user-topbar {
+    background: rgba(16, 28, 44, 0.97) !important;
+    color: var(--aa-text) !important;
+    border-bottom: 1px solid var(--aa-border) !important;
+}
+
+.user-topbar-title,
+.user-topbar-account {
+    color: var(--aa-text) !important;
+}
+
+.user-topbar-account {
+    background: var(--aa-panel) !important;
+    border: 1px solid var(--aa-border) !important;
+    border-radius: 10px;
+}
+
+/* AREA KONTEN */
+.user-page-content {
+    background: #101c2c !important;
+    color: var(--aa-text) !important;
+}
+
+.user-page-content main {
+    color: var(--aa-text) !important;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(
+        115deg,
+        #24384b,
+        #152435
+    ) !important;
+
+    border: 1px solid var(--aa-border) !important;
+    border-radius: 19px !important;
+    color: var(--aa-text) !important;
+    box-shadow: none !important;
+}
+
+.hero h1,
+.hero h2 {
+    color: var(--aa-text) !important;
+}
+
+.hero p {
+    color: #c0ccda !important;
+}
+
+.hero-label,
+.section-label {
+    color: var(--aa-yellow) !important;
+}
+
+/* TOMBOL */
+.btn-primary {
+    background: var(--aa-yellow) !important;
+    color: var(--aa-navy) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn-primary:hover {
+    background: #e5ad00 !important;
+    color: var(--aa-navy) !important;
+}
+
+.btn-outline {
+    background: transparent !important;
+    color: var(--aa-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* KATALOG */
+.catalog-section {
+    background: transparent !important;
+    color: var(--aa-text) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.catalog-section h2,
+.catalog-section h3,
+.catalog-section .section-heading h2 {
+    color: var(--aa-text) !important;
+}
+
+.catalog-section p {
+    color: var(--aa-muted) !important;
+}
+
+.catalog-link {
+    color: var(--aa-yellow) !important;
+}
+
+/* KARTU PRODUK */
+.product-card {
+    background: var(--aa-panel) !important;
+    border: 1px solid var(--aa-border) !important;
+    border-radius: 14px !important;
+    color: var(--aa-text) !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    background: #1c3045 !important;
+    border-color: rgba(255, 193, 7, 0.35) !important;
+    transform: translateY(-4px);
+}
+
+.product-info {
+    background: var(--aa-panel) !important;
+    color: var(--aa-text) !important;
+}
+
+.product-info h3 {
+    color: var(--aa-text) !important;
+}
+
+.product-category,
+.rating-count {
+    color: var(--aa-muted) !important;
+}
+
+.product-rating {
+    color: var(--aa-yellow) !important;
+}
+
+.product-bottom p,
+.product-bottom strong {
+    color: var(--aa-text) !important;
+}
+
+.product-bottom p span {
+    color: var(--aa-muted) !important;
+}
+
+.product-tag {
+    background: var(--aa-yellow) !important;
+    color: var(--aa-navy) !important;
+}
+
+.product-button {
+    background: var(--aa-yellow) !important;
+    color: var(--aa-navy) !important;
+    border-radius: 9px !important;
+}
+
+.product-button:hover {
+    background: #e5ad00 !important;
+}
+
+/* FILTER KATEGORI JIKA DIGUNAKAN */
+.catalog-filter {
+    background: var(--aa-panel) !important;
+    color: var(--aa-text) !important;
+    border: 1px solid var(--aa-border) !important;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.catalog-filter label {
+    color: var(--aa-muted) !important;
+}
+
+.catalog-filter select {
+    background: #101c2c !important;
+    color: var(--aa-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* TENTANG KAMI */
+.about-section {
+    background: var(--aa-panel) !important;
+    border: 1px solid var(--aa-border) !important;
+    border-radius: 16px !important;
+    color: var(--aa-text) !important;
+    box-shadow: none !important;
+}
+
+.about-section h2 {
+    color: var(--aa-text) !important;
+}
+
+.about-section p {
+    color: var(--aa-muted) !important;
+}
+
+.about-icon {
+    color: var(--aa-yellow) !important;
+}
+
+/* FOOTER */
+.footer {
+    background: #101c2c !important;
+    color: var(--aa-muted) !important;
+    border-top: 1px solid var(--aa-border) !important;
+}
+
+.footer .logo {
+    color: var(--aa-text) !important;
+}
+
+.footer .logo span {
+    color: var(--aa-yellow) !important;
+}
+
+/* INSPIRASI */
+.inspiration-section {
+    background: var(--aa-panel) !important;
+    color: var(--aa-text) !important;
+    border: 1px solid var(--aa-border) !important;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.inspiration-section h2 {
+    color: var(--aa-text) !important;
+}
+
+.inspiration-section p,
+#quote-result {
+    color: var(--aa-muted) !important;
+}
+
+.inspiration-section button {
+    background: var(--aa-yellow) !important;
+    color: var(--aa-navy) !important;
+    border: none !important;
+    border-radius: 9px;
+    padding: 11px 18px;
+    cursor: pointer;
+}
+
+/* SNACKBAR */
+.user-snackbar {
+    background: var(--aa-yellow) !important;
+    color: var(--aa-navy) !important;
+}
+
+/* OVERLAY MOBILE */
+.user-sidebar-overlay {
+    background: rgba(0, 0, 0, 0.7) !important;
+}

@@ -30,10 +30,10 @@ body {
     background-color: var(--page-background);
     background-image:
         linear-gradient(
-            rgba(8, 22, 33, 0.88),
-            rgba(8, 22, 33, 0.94)
+            rgba(8, 22, 33, 0.58),
+            rgba(8, 22, 33, 0.70)
         ),
-        url("../assets/sunset.jpg");
+        url("../assets/backgrounddashboard.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -183,12 +183,35 @@ a {
 .admin-info h4 {
     color: var(--white);
     font-size: 12px;
+    overflow-wrap: anywhere;
 }
 
 .admin-info p {
     margin-top: 5px;
     color: var(--text-muted);
     font-size: 10px;
+}
+
+.admin-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    margin-top: 10px;
+    padding: 0 11px;
+    border: 1px solid rgba(255, 125, 125, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 100, 100, 0.08);
+    color: #ffb4b4;
+    font-size: 11px;
+    font-weight: 700;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.admin-logout:hover {
+    border-color: rgba(255, 125, 125, 0.5);
+    background: rgba(255, 100, 100, 0.16);
+    color: #ffffff;
 }
 
 /* ==============================
@@ -1601,20 +1624,99 @@ a {
     background: rgba(255, 107, 107, 0.14);
     color: #ff9292;
 }
-/* Tombol Logout pada header admin */
+/* Tombol keluar pada header admin */
 .logout-button {
-    display: inline-block;
-    margin-left: 18px;
-    padding: 9px 18px;
-    background-color: #dc3545;
-    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    margin-left: 8px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 125, 125, 0.25);
+    background-color: rgba(220, 53, 69, 0.12);
+    color: #ffc2c2;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
     border-radius: 8px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .logout-button:hover {
-    background-color: #bb2d3b;
+    border-color: rgba(255, 125, 125, 0.5);
+    background-color: rgba(220, 53, 69, 0.25);
+    color: #ffffff;
+}
+
+.form-group input[type="file"] {
+    padding: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.form-group input[type="file"]::file-selector-button {
+    min-height: 36px;
+    margin-right: 12px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--yellow);
+    color: var(--navy-dark);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    background: #ffd54f;
+    transform: translateY(-1px);
+}
+
+.form-group input[type="file"]:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+}
+
+/* Tombol keluar pada profil sidebar admin */
+.sidebar .sidebar-bottom .admin-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar .sidebar-bottom .admin-info > .admin-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 36px;
+    margin-top: 11px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 126, 126, 0.28);
+    border-radius: 9px;
+    background: rgba(255, 100, 100, 0.09);
+    color: #ffc0c0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.sidebar .sidebar-bottom .admin-info > .admin-logout::before {
+    content: "↪";
+    font-size: 15px;
+    line-height: 1;
+}
+
+.sidebar .sidebar-bottom .admin-info > .admin-logout:hover {
+    border-color: rgba(255, 126, 126, 0.55);
+    background: rgba(220, 53, 69, 0.24);
+    color: #ffffff;
+}
+
+.sidebar .sidebar-bottom .admin-info > .admin-logout:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
 }
