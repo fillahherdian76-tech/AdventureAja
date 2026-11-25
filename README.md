@@ -16,6 +16,5 @@ Link Figma: https://www.figma.com/design/druUAnHtPfXQvhPoKZJ163/AdventureAja?nod
 - `uploads/products/`: gambar produk yang diunggah admin.
 - File PHP di root: route tipis untuk menjaga URL halaman dan endpoint lama tetap berlaku.
 
-Panduan menjalankan proyek: [docs/setup.md](docs/setup.md).
 
 
