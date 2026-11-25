@@ -85,10 +85,10 @@ $message = $messages[$_GET['pesan'] ?? ''] ?? '';
         <div class="sidebar-logo"><h2>Adventure<span>Aja</span></h2><p>ADMIN PANEL</p></div>
         <nav class="sidebar-nav">
             <p class="menu-label">MENU UTAMA</p>
-            <a href="admin.php" class="nav-link"><span class="nav-icon">Ã¢â€“Â¦</span><span>Dashboard</span></a>
-            <a href="categories.php" class="nav-link"><span class="nav-icon">Ã¢â€“Â¤</span><span>Kategori</span></a>
-            <a href="products.php" class="nav-link"><span class="nav-icon">Ã¢â€“Â£</span><span>Produk</span></a>
-            <a href="transaction.php" class="nav-link active"><span class="nav-icon">Ã¢â€“Â£</span><span>Transaksi</span></a>
+            <a href="admin.php" class="nav-link"><span class="nav-icon">&#8962;</span><span>Dashboard</span></a>
+            <a href="categories.php" class="nav-link"><span class="nav-icon">&#9638;</span><span>Kategori</span></a>
+            <a href="products.php" class="nav-link"><span class="nav-icon">&#9635;</span><span>Produk</span></a>
+            <a href="transaction.php" class="nav-link active"><span class="nav-icon">&#128203;</span><span>Transaksi</span></a>
         </nav>
         <div class="sidebar-bottom"><div class="admin-avatar">A</div><div class="admin-info"><h4><?= e($_SESSION['user']['name'] ?? 'Administrator') ?></h4><p>Admin AdventureAja</p><a href="logout.php" class="admin-logout">Keluar</a></div></div>
     </aside>
@@ -96,14 +96,14 @@ $message = $messages[$_GET['pesan'] ?? ''] ?? '';
     <main class="main-content">
         <header class="topbar">
             <div class="topbar-left">
-                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">Ã¢ËœÂ°</button>
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">&#9776;</button>
                 <div class="page-heading"><p class="breadcrumb">Halaman / Transaksi</p><h1>Manajemen Transaksi</h1></div>
             </div>
             <div class="topbar-info"><div class="status-indicator"></div><span>Admin Panel</span></div>
         </header>
 
         <section class="welcome-section transaction-welcome">
-            <div class="welcome-text"><p class="eyebrow">MANAJEMEN PENYEWAAN</p><h2>Pantau Transaksi Penyewaan</h2><p>Pesanan user otomatis tercatat di sini setelah memilih jadwal dan menekan Ã¢â‚¬Å“Buat PesananÃ¢â‚¬Â pada checkout.</p></div>
+            <div class="welcome-text"><p class="eyebrow">MANAJEMEN PENYEWAAN</p><h2>Pantau Transaksi Penyewaan</h2><p>Pesanan user otomatis tercatat di sini setelah memilih jadwal dan menekan &quot;Buat Pesanan&quot; pada checkout.</p></div>
         </section>
 
         <section class="transaction-summary" aria-label="Ringkasan transaksi">
@@ -133,7 +133,7 @@ $message = $messages[$_GET['pesan'] ?? ''] ?? '';
                                 <td class="transaction-id"><?= e($transaction['transaction_code']) ?></td>
                                 <td><?= e($transaction['customer_name'] ?? 'Pengguna') ?></td>
                                 <td><?= e($transaction['product_names'] ?: 'Detail tidak tersedia') ?></td>
-                                <td><?= e(date('d M Y', strtotime($transaction['rental_start_date']))) ?> Ã¢â‚¬â€œ <?= e(date('d M Y', strtotime($transaction['rental_end_date']))) ?></td>
+                                <td><?= e(date('d M Y', strtotime($transaction['rental_start_date']))) ?> &ndash; <?= e(date('d M Y', strtotime($transaction['rental_end_date']))) ?></td>
                                 <td>Rp<?= number_format((float)$transaction['total_amount'], 0, ',', '.') ?></td>
                                 <?php
                                 $statusClass = [
@@ -171,7 +171,7 @@ $message = $messages[$_GET['pesan'] ?? ''] ?? '';
             </div>
         </section>
 
-        <footer class="dashboard-footer"><p>Ã‚Â© 2026 AdventureAja. Temani setiap langkah petualanganmu.</p></footer>
+        <footer class="dashboard-footer"><p>&copy; 2026 AdventureAja. Temani setiap langkah petualanganmu.</p></footer>
     </main>
 </div>
 <script src="js/script.js"></script>

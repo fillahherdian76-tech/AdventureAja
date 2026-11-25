@@ -87,9 +87,7 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
 
         <header class="topbar">
             <div class="topbar-left">
-                <button type="button"
-                    class="sidebar-toggle"
-                    id="sidebarToggle">Ã¢ËœÂ°</button>
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">&#9776;</button>
 
                 <div class="page-heading">
                     <p class="breadcrumb">Halaman / Produk / Form</p>
@@ -111,7 +109,7 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
         <section class="form-card">
 
             <div class="form-card-heading">
-                <div class="form-heading-icon">Ã¢â€“Â£</div>
+                <div class="form-heading-icon">&#9635;</div>
                 <div>
                     <h2>Informasi Produk</h2>
                     <p>Isi detail produk. Kategori ditetapkan otomatis dan tidak perlu dipilih.</p>
@@ -215,7 +213,7 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
         </section>
 
         <footer class="dashboard-footer">
-            <p>Ã‚Â© 2026 AdventureAja.</p>
+            <p>&copy; 2026 AdventureAja.</p>
         </footer>
 
     </main>

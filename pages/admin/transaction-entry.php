@@ -35,10 +35,10 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
         <div class="sidebar-logo"><h2>Adventure<span>Aja</span></h2><p>ADMIN PANEL</p></div>
         <nav class="sidebar-nav">
             <p class="menu-label">MENU UTAMA</p>
-            <a href="admin.php" class="nav-link"><span class="nav-icon">Ã¢â€“Â¦</span><span>Dashboard</span></a>
-            <a href="categories.php" class="nav-link"><span class="nav-icon">Ã¢â€“Â¤</span><span>Kategori</span></a>
-            <a href="products.php" class="nav-link"><span class="nav-icon">Ã¢â€“Â£</span><span>Produk</span></a>
-            <a href="transaction.php" class="nav-link active"><span class="nav-icon">Ã¢â€“Â£</span><span>Transaksi</span></a>
+            <a href="admin.php" class="nav-link"><span class="nav-icon">&#8962;</span><span>Dashboard</span></a>
+            <a href="categories.php" class="nav-link"><span class="nav-icon">&#9638;</span><span>Kategori</span></a>
+            <a href="products.php" class="nav-link"><span class="nav-icon">&#9635;</span><span>Produk</span></a>
+            <a href="transaction.php" class="nav-link active"><span class="nav-icon">&#128203;</span><span>Transaksi</span></a>
         </nav>
         <div class="sidebar-bottom"><div class="admin-avatar">A</div><div class="admin-info"><h4><?= e($_SESSION['user']['name'] ?? 'Administrator') ?></h4><p>Admin AdventureAja</p><a href="logout.php" class="admin-logout">Keluar</a></div></div>
     </aside>
@@ -46,7 +46,7 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
     <main class="main-content">
         <header class="topbar">
             <div class="topbar-left">
-                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">Ã¢ËœÂ°</button>
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">&#9776;</button>
                 <div class="page-heading"><p class="breadcrumb">Halaman / Transaksi / Form</p><h1>Tambah Transaksi</h1></div>
             </div>
             <div class="topbar-info"><div class="status-indicator"></div><span>Admin Panel</span></div>
@@ -87,7 +87,7 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
                                 <option value="" data-price="0" data-stock="0">Pilih perlengkapan</option>
                                 <?php foreach ($products as $product): ?>
                                     <option value="<?= (int)$product['id'] ?>" data-price="<?= (float)$product['price_per_day'] ?>" data-stock="<?= (int)$product['stock'] ?>" <?= $selectedProductId === (int)$product['id'] ? 'selected' : '' ?>>
-                                        <?= e($product['name']) ?> Ã¢â‚¬â€ Rp<?= number_format((float)$product['price_per_day'], 0, ',', '.') ?>/hari (stok <?= (int)$product['stock'] ?>)
+                                        <?= e($product['name']) ?> &mdash; Rp<?= number_format((float)$product['price_per_day'], 0, ',', '.') ?>/hari (stok <?= (int)$product['stock'] ?>)
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -116,7 +116,7 @@ $notice = ($_GET['pesan'] ?? '') === 'validasi'
             <?php endif; ?>
         </section>
 
-        <footer class="dashboard-footer"><p>Ã‚Â© 2026 AdventureAja. Temani setiap langkah petualanganmu.</p></footer>
+        <footer class="dashboard-footer"><p>&copy; 2026 AdventureAja. Temani setiap langkah petualanganmu.</p></footer>
     </main>
 </div>
 <script src="js/script.js"></script>

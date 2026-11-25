@@ -70,21 +70,21 @@ $totalCategories = mysqli_num_rows($result);
                 <p class="menu-label">MENU UTAMA</p>
 
                 <a href="admin.php" class="nav-link">
-                    <span class="nav-icon">Ã¢â€“Â¦</span>
+                    <span class="nav-icon">&#8962;</span>
                     <span>Dashboard</span>
                 </a>
 
                 <a href="categories.php" class="nav-link active">
-                    <span class="nav-icon">Ã¢â€“Â¤</span>
+                    <span class="nav-icon">&#9638;</span>
                     <span>Kategori</span>
                 </a>
                 <a href="products.php" class="nav-link">
-                    <span class="nav-icon">Ã¢â€“Â£</span>
+                    <span class="nav-icon">&#9635;</span>
                     <span>Produk</span>
                 </a>
 
                 <a href="transaction.php" class="nav-link">
-                    <span class="nav-icon">Ã¢â€“Â£</span>
+                    <span class="nav-icon">&#128203;</span>
                     <span>Transaksi</span>
                 </a>
             </nav>
@@ -109,15 +109,7 @@ $totalCategories = mysqli_num_rows($result);
 
                 <div class="topbar-left">
 
-                    <button
-                        type="button"
-                        class="sidebar-toggle"
-                        id="sidebarToggle"
-                        aria-label="Buka atau tutup sidebar"
-                        aria-controls="sidebar"
-                        aria-expanded="true">
-                        Ã¢ËœÂ°
-                    </button>
+                    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">&#9776;</button>
 
                     <div class="page-heading">
                         <p class="breadcrumb">Halaman / Kategori</p>
@@ -315,7 +307,7 @@ $totalCategories = mysqli_num_rows($result);
             <!-- Footer Halaman -->
             <footer class="dashboard-footer">
                 <p>
-                    Ã‚Â© 2026 AdventureAja.
+                    &copy; 2026 AdventureAja.
                     Temani setiap langkah petualanganmu.
                 </p>
             </footer>

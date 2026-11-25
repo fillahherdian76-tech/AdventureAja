@@ -109,22 +109,22 @@ if (!$resultLatest) {
             <p class="menu-label">MENU UTAMA</p>
 
             <a href="admin.php" class="nav-link active">
-                <span class="nav-icon">Ã¢â€“Â¦</span>
+                <span class="nav-icon">&#8962;</span>
                 <span>Dashboard</span>
             </a>
 
             <a href="categories.php" class="nav-link">
-                <span class="nav-icon">Ã¢â€“Â¤</span>
+                <span class="nav-icon">&#9638;</span>
                 <span>Kategori</span>
             </a>
 
             <a href="products.php" class="nav-link">
-                <span class="nav-icon">Ã¢â€“Â£</span>
+                <span class="nav-icon">&#9635;</span>
                 <span>Produk</span>
             </a>
 
             <a href="transaction.php" class="nav-link">
-                <span class="nav-icon">Ã¢â€“Â£</span>
+                <span class="nav-icon">&#128203;</span>
                 <span>Transaksi</span>
             </a>
         </nav>
@@ -149,15 +149,7 @@ if (!$resultLatest) {
 
             <div class="topbar-left">
 
-                <button
-                    type="button"
-                    class="sidebar-toggle"
-                    id="sidebarToggle"
-                    aria-label="Buka atau tutup sidebar"
-                    aria-controls="sidebar"
-                    aria-expanded="true">
-                    Ã¢ËœÂ°
-                </button>
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Buka atau tutup sidebar" aria-controls="sidebar" aria-expanded="true">&#9776;</button>
 
                 <div class="page-heading">
                     <p class="breadcrumb">Halaman / Dashboard</p>
@@ -192,14 +184,14 @@ if (!$resultLatest) {
 
                 <a href="categories.php" class="primary-button">
                     Kelola Kategori
-                    <span>Ã¢â€ â€™</span>
+                    <span>&rarr;</span>
                 </a>
 
             </div>
 
             <div class="welcome-decoration" aria-hidden="true">
                 <span class="decoration-circle"></span>
-                <span class="decoration-icon">Ã¢Å’Â</span>
+                <span class="decoration-icon">&#10022;</span>
             </div>
 
         </section>
@@ -220,7 +212,7 @@ if (!$resultLatest) {
                 <article class="stat-card">
 
                     <div class="stat-card-top">
-                        <div class="stat-icon yellow-icon">Ã¢â€“Â¤</div>
+                        <div class="stat-icon yellow-icon">&#9638;</div>
                         <span class="stat-tag">Data</span>
                     </div>
 
@@ -238,7 +230,7 @@ if (!$resultLatest) {
                 <article class="stat-card">
 
                     <div class="stat-card-top">
-                        <div class="stat-icon green-icon">Ã¢â€“Â£</div>
+                        <div class="stat-icon green-icon">&#9635;</div>
                         <span class="stat-tag">Produk</span>
                     </div>
 
@@ -256,7 +248,7 @@ if (!$resultLatest) {
                 <article class="stat-card">
 
                     <div class="stat-card-top">
-                        <div class="stat-icon blue-icon">Ã¢â€“Â£</div>
+                        <div class="stat-icon blue-icon">&#128203;</div>
                         <span class="stat-tag">Sewa</span>
                     </div>
 
@@ -274,7 +266,7 @@ if (!$resultLatest) {
                 <article class="stat-card">
 
                     <div class="stat-card-top">
-                        <div class="stat-icon green-icon">Ã¢â€”Â·</div>
+                        <div class="stat-icon green-icon">&#10003;</div>
                         <span class="stat-tag">Proses</span>
                     </div>
 
@@ -303,7 +295,7 @@ if (!$resultLatest) {
                 </div>
 
                 <a href="transaction.php" class="text-link">
-                    Lihat Semua Ã¢â€ â€™
+                    Lihat Semua &rarr;
                 </a>
 
             </div>
@@ -423,7 +415,7 @@ if (!$resultLatest) {
         <!-- FOOTER -->
         <footer class="dashboard-footer">
             <p>
-                Ã‚Â© 2026 AdventureAja.
+                &copy; 2026 AdventureAja.
                 Temani setiap langkah petualanganmu.
             </p>
         </footer>
